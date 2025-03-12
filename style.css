@@ -1,0 +1,225 @@
+html,
+:root {
+  --color-primario: #3498db; /* Azul */
+}
+
+body {
+  margin: 0; /* Elimina los márgenes predeterminados */
+  padding: 0; /* Elimina el relleno predeterminado */
+  height: 100%; /* Hace que el body ocupe toda la altura de la ventana */
+  font-family: Atma;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Asegura que el fondo cubra toda la ventana (100% de la altura) */
+  width: 100vw; /* Asegura que el fondo cubra toda la ventana (100% del ancho) */
+  background: linear-gradient(45deg, #1025e6, #c4aaaa);
+}
+
+/* Estilo del contenedor del menú */
+.menu {
+  display: flex; /* Usamos Flexbox */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  gap: 20px; /* Espacio uniforme entre los elementos */
+  background-color: #1a70aa; /* Fondo oscuro */
+  padding: 10px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilo de los elementos del menú */
+.menu a {
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+  color: white; /* Color de texto blanco */
+  padding: 0.5px 20px; /* Espaciado interno de los enlaces */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Efecto de transición al pasar el mouse */
+}
+
+/* Para agregar un ícono antes de cada enlace */
+a::before {
+  content: "🔗"; /* Agrega un ícono antes del enlace */
+  margin-right: 5px; /* Espaciado entre el ícono y el texto */
+}
+
+
+/* Efecto al pasar el mouse por los enlaces */
+.menu a:hover {
+  background-color: #d87676; /* Fondo más claro al pasar el mouse */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  opacity: 0.8; 
+
+}
+
+
+.mi-elemento {
+  position: relative; /* Posicionamiento relativo */
+  top: 15px; /* Lo mueve 15px hacia abajo desde su posición original */
+
+}
+
+.mi-elemento2 {
+  display: block; /* Visible por defecto */
+
+}
+
+.mi-elemento3 {
+  
+  position:relative; /* Posicionamiento relativo */
+  top: 10px; /* Lo mueve 15px hacia abajo desde su posición original */
+  left: 700px;
+  width: 300px; height: 50px; 
+  background-color: #0ebde9; 
+  border-radius: 10px;
+  box-shadow: 30px 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+
+/*Media para ocultar el contendido del 2 div en pantallas menores a 600px*/
+
+@media (max-width: 600px) {
+  .mi-elemento {
+      display: none; /* Se oculta en pantallas menores a 600px */
+  }
+}
+
+
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+  position: relative;
+  top: 10px;
+}
+
+.des {
+  color: rgb(161, 40, 209);
+  font-weight: bold;
+}
+.contenedor {
+  display: block; /* Activa Flexbox */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+}
+#contenedor {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #000;
+  margin: 10px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  background-color :var(--color-primario); /* Color de fondo */
+  color: rgb(238, 8, 8); /* Color del texto */
+  justify-content: center; /* Centra el texto horizontalmente */
+  align-items: center; /* Centra el texto verticalmente */
+  font-size: 1.5rem;
+}
+
+.boton {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+h2, h3 {
+  color: rgb(176, 211, 23);
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+p.d1 {
+  color: rgb(0, 255, 149);
+  text-align: center;
+}
+
+p.modificado {
+  color: rgb(48, 180, 125);
+  text-align: right;
+  text-decoration: underline;
+}
+
+p {
+  column-count: 2;  /* Divide el párrafo en 2 columnas */
+  column-gap: 20px; /* Establece el espacio entre las columnas */
+  color: rgb(9, 247, 147);
+  text-align: right;
+  text-decoration: underline;
+}
+
+
+
+img.luca {
+  transition: transform 0.5s; /* Efecto de transición al pasar el mouse */
+    display: block;
+    margin: 0 auto 0 0; /* Empuja la imagen a la izquierda */
+    filter: grayscale(100%);
+    
+}
+
+img.luca:hover {
+  transform: rotate(45deg); /* Rota 45 grados al pasar el mouse */
+  
+}
+
+/*EJERCICIO 26 OVERLAY*/
+
+.imagen-container {
+  position: relative; /* Establecemos el contenedor con posición relativa */
+  width: 500px;
+  height: 400px;
+  overflow: hidden; /* Evitamos que el overlay se salga del contenedor */
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la imagen cubra todo el contenedor */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo negro semi-transparente */
+  opacity: 0; /* El overlay está oculto al inicio */
+  transition: opacity 0.3s ease; /* Transición suave para el cambio de opacidad */
+}
+
+.imagen-container:hover .overlay {
+  opacity: 1; /* Al pasar el mouse, el overlay se vuelve visible */
+}
+
+/*SPINER*/
+
+.spinner {
+  margin: 100px;
+  margin-left: 500px;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* Color claro para el fondo */
+  border-top: 5px solid #3498db; /* Color más oscuro para el borde superior */
+  border-radius: 50%; /* Hace que el borde sea redondo */
+  animation: spin 1s linear infinite; /* Aplica la animación */
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg); /* Empieza sin rotación */
+  }
+  100% {
+      transform: rotate(360deg); /* Gira 360 grados */
+  }
+}
